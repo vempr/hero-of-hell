@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED: float = 100.0
-const JUMP_VELOCITY: float = 4.5
+const SPEED: float = 25.0
+const JUMP_VELOCITY: float = 25.0
 
 @onready var camera: Camera3D = %Camera
 
@@ -15,9 +15,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
 	if Input.is_action_just_pressed("pause"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -26,6 +23,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		return
+	
+	if not is_on_floor():
+		velocity += get_gravity() * 6.0 * delta
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
