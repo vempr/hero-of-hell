@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccaxpmky16ckp"]
+
+[ext_resource type="Script" uid="uid://cau7l0vern1v4" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=462254681]
+script = ExtResource("1_ahhtf")
+
+[node name="Label" type="Label" parent="." unique_id=274436677]
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 441.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 32
+text = "form: dog
+stamina: 5.0
+max stamina: 5.0"
