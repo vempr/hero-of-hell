@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://duxwblkqunx7j" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://btevolk4e4o35" path="res://scenes/player.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c1brddl4fvbnr" path="res://scenes/doors.tscn" id="2_k0juu"]
+[ext_resource type="PackedScene" uid="uid://clpa3lmjwuim" path="res://scenes/world_border_doors.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://cv7qtn6vhsi0o" path="res://scenes/terrain.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://ccaxpmky16ckp" path="res://scenes/hud.tscn" id="5_qfnet"]
 
@@ -82,6 +83,18 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1219
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldBorders/StaticBody3D4" unique_id=477567139]
 shape = SubResource("BoxShape3D_k0juu")
 
+[node name="WorldBorderDoors" parent="WorldBorders" unique_id=2058184001 instance=ExtResource("2_qfnet")]
+transform = Transform3D(12.5, 0, 0, 0, -5.4639236e-07, -12.5, 0, 12.5, -5.4639236e-07, 17.5, -45, 1238.5)
+
+[node name="WorldBorderDoors2" parent="WorldBorders" unique_id=1746840515 instance=ExtResource("2_qfnet")]
+transform = Transform3D(12.5, 0, 0, 0, -5.4639236e-07, -12.5, 0, 12.5, -5.4639236e-07, 5, -44.99992, -732.5)
+
+[node name="WorldBorderDoors3" parent="WorldBorders" unique_id=1333009765 instance=ExtResource("2_qfnet")]
+transform = Transform3D(-4.371139e-07, -10, 4.371139e-07, 0, -4.371139e-07, -10, 10, -4.371139e-07, 1.9106854e-14, -1215, -44.999966, 253)
+
+[node name="WorldBorderDoors4" parent="WorldBorders" unique_id=44943265 instance=ExtResource("2_qfnet")]
+transform = Transform3D(-4.371139e-07, -10, 4.371139e-07, 0, -4.371139e-07, -10, 10, -4.371139e-07, 1.9106854e-14, 1241, -44.99996, 248.0001)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=57049898]
 light_color = Color(1, 0, 0, 1)
 light_energy = 6.26
@@ -113,3 +126,4 @@ process_material = SubResource("ParticleProcessMaterial_rwgxs")
 draw_pass_1 = SubResource("SphereMesh_4wyf3")
 
 [node name="HUD" parent="." unique_id=462254681 instance=ExtResource("5_qfnet")]
+visible = false

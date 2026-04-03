@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btevolk4e4o35"]
 
 [ext_resource type="Script" uid="uid://ceacp8c5c4rw4" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://d4mma3ewg63yr" path="res://scenes/chainsaw.tscn" id="2_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
 radius = 2.0
@@ -43,6 +44,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 2.1008463, -0.52305555)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/FrontChainsaw:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 1.3, -3.242)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/LeftChainsaw:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.025, -1.105, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/RightChainsaw:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.9794855, -1.9139538, 0.23950768)]
+}
 
 [sub_resource type="Animation" id="Animation_g2els"]
 resource_name = "dog_in"
@@ -70,6 +107,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 30, -0.523), Vector3(0, 2.101, -0.523)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/FrontChainsaw:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 1.3, -3.242), Vector3(-0.1, 1.3, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/RightChainsaw:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.9794855, -1.9139538, 0.23950768), Vector3(0.979, -1.914, 3)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/LeftChainsaw:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.025, -1.105, 0), Vector3(-1.025, -1.105, 3)]
+}
 
 [sub_resource type="Animation" id="Animation_qhqgy"]
 resource_name = "dog_out"
@@ -96,6 +169,42 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 2.1008463, -0.52305555), Vector3(0, 30, -0.523)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/FrontChainsaw:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.1, 1.3, -1), Vector3(-0.1, 1.3, -3.242)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/LeftChainsaw:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.025, -1.105, 3), Vector3(-1.025, -1.105, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/RightChainsaw:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.979, -1.914, 3), Vector3(0.9794855, -1.9139538, 0.23950768)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
@@ -125,6 +234,18 @@ shape = SubResource("CapsuleShape3D_u8vuu")
 [node name="Camera" type="Camera3D" parent="." unique_id=1049091541]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.94417536, 0.32944348, 0, -0.32944348, 0.9441753, 0, 2.1008463, -0.52305555)
+
+[node name="FrontChainsaw" parent="Camera" unique_id=1437614866 instance=ExtResource("2_g2els")]
+unique_name_in_owner = true
+transform = Transform3D(14.999999, 0, 0, 0, 14.162632, -4.9416533, 0, 4.9416533, 14.162633, -0.1, 1.3, -3.242)
+
+[node name="LeftChainsaw" parent="Camera" unique_id=1326768867 instance=ExtResource("2_g2els")]
+unique_name_in_owner = true
+transform = Transform3D(12.884638, 1.0238032, -7.611699, -0.61530447, -14.680748, -3.01617, -7.655552, 2.903052, -12.568411, -1.025, -1.105, 0)
+
+[node name="RightChainsaw" parent="Camera" unique_id=1164538255 instance=ExtResource("2_g2els")]
+unique_name_in_owner = true
+transform = Transform3D(-12.5943, 1.6800728, 7.972523, -1.0685556, 14.210288, -4.6825867, -8.077246, -4.4995346, -11.811554, 0.9794855, -1.9139538, 0.23950768)
 
 [node name="TransformCooldownTimer" type="Timer" parent="." unique_id=200994206]
 unique_name_in_owner = true
